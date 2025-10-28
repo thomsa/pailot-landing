@@ -43,7 +43,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-foreground/70"
           >
             <Sparkles className="h-3 w-3" />
             {t('badge')}
@@ -52,7 +52,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"
+            className="text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl"
           >
             {t('headline')}
           </motion.h1>
@@ -60,7 +60,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.8 }}
-            className="max-w-xl text-lg text-white/70"
+            className="max-w-xl text-lg text-foreground/70"
           >
             {t('description')}
           </motion.p>
@@ -78,7 +78,7 @@ const Hero = () => {
             >
               {t('cta')}
             </Button>
-            <Link href="#features" className="text-sm font-semibold text-white/70 transition-colors duration-300 hover:text-white">
+            <Link href="#features" className="text-sm font-semibold text-foreground/70 transition-colors duration-300 hover:text-foreground">
               {t('learnMore')} →
             </Link>
           </motion.div>
@@ -149,7 +149,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="mt-6 flex items-center justify-center gap-6 text-white/70"
+            className="mt-6 flex items-center justify-center gap-6 text-foreground/70"
           >
             <div className="flex items-center gap-2">
               <Target className="h-5 w-5 text-sky-light" />

@@ -11,6 +11,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         navy: "#0B132B",
         electric: "#1E90FF",
         sky: {
@@ -27,7 +29,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [heroui()],
+  plugins: [heroui() as any],
 };
 
 export default config;

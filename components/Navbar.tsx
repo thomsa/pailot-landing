@@ -32,13 +32,13 @@ const Navbar = () => {
       className="fixed inset-x-0 top-0 z-50 border-b border-white/5 backdrop-blur-xl"
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5 md:px-12 lg:px-16">
-        <Link href="#top" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-white">
+        <Link href="#top" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-foreground">
           <Image src="/logo.svg" alt="Pailot" width={36} height={36} className="h-9 w-9" />
-          <span className="hidden text-white/90 md:inline">Pailot</span>
+          <span className="hidden text-foreground/90 md:inline">Pailot</span>
         </Link>
-        <nav className="hidden items-center gap-10 text-sm font-medium text-white/70 md:flex">
+        <nav className="hidden items-center gap-10 text-sm font-medium text-foreground/70 md:flex">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="transition-colors duration-300 hover:text-white">
+            <Link key={link.href} href={link.href} className="transition-colors duration-300 hover:text-foreground">
               {link.label}
             </Link>
           ))}
@@ -48,7 +48,7 @@ const Navbar = () => {
             type="button"
             aria-label="Toggle theme"
             onClick={() => setTheme(isLight ? "dark" : "light")}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-white/20"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground/10 text-foreground transition-all duration-300 hover:bg-foreground/20"
           >
             {mounted && isLight ? <MoonIcon className="h-5 w-5" /> : <SunIcon className="h-5 w-5" />}
           </button>
@@ -57,14 +57,14 @@ const Navbar = () => {
             href="/get-started"
             size="sm"
             radius="full"
-            className="gradient-border relative overflow-hidden bg-white/5 px-6 font-semibold text-white shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+            className="gradient-border relative overflow-hidden bg-foreground/5 px-6 font-semibold text-foreground shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:bg-foreground/10"
           >
             Take Off
           </Button>
         </div>
         <button
           type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-foreground/10 text-foreground md:hidden"
           onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle navigation"
         >
@@ -78,24 +78,24 @@ const Navbar = () => {
           exit={{ height: 0, opacity: 0 }}
           className="md:hidden"
         >
-          <div className="space-y-6 px-6 pb-8 text-sm font-medium text-white/80">
+          <div className="space-y-6 px-6 pb-8 text-sm font-medium text-foreground/80">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-full border border-white/10 px-4 py-3 text-center transition-colors duration-300 hover:border-white/30 hover:text-white"
+                className="block rounded-full border border-white/10 px-4 py-3 text-center transition-colors duration-300 hover:border-white/30 hover:text-foreground"
               >
                 {link.label}
               </Link>
             ))}
             <div className="flex items-center justify-between">
-              <span className="text-white/70">Theme</span>
+              <span className="text-foreground/70">Theme</span>
               <button
                 type="button"
                 aria-label="Toggle theme"
                 onClick={() => setTheme(isLight ? "dark" : "light")}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-white/20"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground/10 text-foreground transition-all duration-300 hover:bg-foreground/20"
               >
                 {mounted && isLight ? <MoonIcon className="h-5 w-5" /> : <SunIcon className="h-5 w-5" />}
               </button>
@@ -105,7 +105,7 @@ const Navbar = () => {
               href="/get-started"
               size="md"
               radius="full"
-              className="gradient-border relative w-full overflow-hidden bg-white/5 py-3 font-semibold text-white shadow-glow transition-transform duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+              className="gradient-border relative w-full overflow-hidden bg-foreground/5 py-3 font-semibold text-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5 hover:bg-foreground/10"
             >
               Take Off
             </Button>

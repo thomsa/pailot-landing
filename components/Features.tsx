@@ -64,8 +64,8 @@ const Features = () => {
   return (
     <section id="features" className="space-y-12">
       <div className="flex flex-col gap-4 text-center">
-        <h2 className="text-3xl font-semibold text-white sm:text-4xl">{t('headline')}</h2>
-        <p className="mx-auto max-w-2xl text-base text-white/70">
+        <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">{t('headline')}</h2>
+        <p className="mx-auto max-w-2xl text-base text-foreground/70">
           {t('description')}
         </p>
       </div>
@@ -80,8 +80,8 @@ const Features = () => {
                     <Icon className="h-6 w-6" />
                   </span>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
-                    <p className="text-sm text-white/70">{feature.description}</p>
+                    <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
+                    <p className="text-sm text-foreground/70">{feature.description}</p>
                   </div>
                 </CardBody>
               </Card>

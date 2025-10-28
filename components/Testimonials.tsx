@@ -43,8 +43,8 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="space-y-12">
       <div className="flex flex-col gap-4 text-center">
-        <h2 className="text-3xl font-semibold text-white sm:text-4xl">{t('headline')}</h2>
-        <p className="mx-auto max-w-2xl text-base text-white/70">
+        <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">{t('headline')}</h2>
+        <p className="mx-auto max-w-2xl text-base text-foreground/70">
           {t('description')}
         </p>
       </div>
@@ -60,9 +60,9 @@ const Testimonials = () => {
               transition={transition}
               className="flex flex-col gap-6 text-center"
             >
-              <p className="text-xl font-medium text-white/90 md:text-2xl">“{testimonials[activeIndex].quote}”</p>
-              <div className="flex flex-col items-center text-sm text-white/60">
-                <span className="font-semibold text-white/80">{testimonials[activeIndex].name}</span>
+              <p className="text-xl font-medium text-foreground/90 md:text-2xl">“{testimonials[activeIndex].quote}”</p>
+              <div className="flex flex-col items-center text-sm text-foreground/60">
+                <span className="font-semibold text-foreground/80">{testimonials[activeIndex].name}</span>
                 <span>{testimonials[activeIndex].role}</span>
               </div>
             </motion.div>

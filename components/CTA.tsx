@@ -18,8 +18,8 @@ const CTA = () => {
         viewport={{ once: true }}
         className="space-y-8"
       >
-        <h2 className="text-3xl font-semibold text-white sm:text-4xl">{t('headline')}</h2>
-        <p className="mx-auto max-w-2xl text-base text-white/70">
+        <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">{t('headline')}</h2>
+        <p className="mx-auto max-w-2xl text-base text-foreground/70">
           {t('description')}
         </p>
         <Button
