@@ -6,7 +6,11 @@ type ScrollRevealOptions = IntersectionObserverInit & {
 };
 
 export const useScrollReveal = (
-  options: ScrollRevealOptions = { threshold: 0.2, rootMargin: "0px 0px -80px 0px", once: true }
+  options: ScrollRevealOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -80px 0px",
+    once: true,
+  },
 ): { ref: React.RefObject<HTMLElement>; controls: AnimationControls } => {
   const controls = useAnimation();
   const ref = useRef<HTMLElement>(null);

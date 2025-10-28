@@ -6,12 +6,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { Sparkles, Target, Zap } from "lucide-react";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
-  const t = useTranslations('hero');
+  const t = useTranslations("hero");
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 12]);
@@ -19,7 +22,11 @@ const Hero = () => {
   const floatY = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
   return (
-    <section ref={sectionRef} id="top" className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0B132B]/70 px-8 py-24 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur-xl md:px-16">
+    <section
+      ref={sectionRef}
+      id="top"
+      className="relative overflow-hidden rounded-3xl border border-border-color bg-card-bg px-8 py-24 md:px-16"
+    >
       <motion.div
         style={{ y }}
         className="pointer-events-none absolute inset-0 -z-10"
@@ -46,7 +53,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-foreground/70"
           >
             <Sparkles className="h-3 w-3" />
-            {t('badge')}
+            {t("badge")}
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -54,7 +61,7 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl"
           >
-            {t('headline')}
+            {t("headline")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 40 }}
@@ -62,7 +69,7 @@ const Hero = () => {
             transition={{ delay: 0.35, duration: 0.8 }}
             className="max-w-xl text-lg text-foreground/70"
           >
-            {t('description')}
+            {t("description")}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -76,10 +83,13 @@ const Hero = () => {
               radius="full"
               className="gradient-border relative overflow-hidden bg-sky-gradient px-8 py-3 text-base font-semibold text-white shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
             >
-              {t('cta')}
+              {t("cta")}
             </Button>
-            <Link href="#features" className="text-sm font-semibold text-foreground/70 transition-colors duration-300 hover:text-foreground">
-              {t('learnMore')} →
+            <Link
+              href="#features"
+              className="text-sm font-semibold text-foreground/70 transition-colors duration-300 hover:text-foreground"
+            >
+              {t("learnMore")} →
             </Link>
           </motion.div>
         </div>
@@ -96,7 +106,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
+              className="relative aspect-square overflow-hidden rounded-2xl border border-border-color bg-card-bg "
             >
               <Image
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
@@ -109,7 +119,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
+              className="relative aspect-square overflow-hidden rounded-2xl border border-border-color bg-card-bg"
             >
               <Image
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"
@@ -122,7 +132,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
+              className="relative aspect-square overflow-hidden rounded-2xl border border-border-color bg-card-bg"
             >
               <Image
                 src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop"
@@ -135,7 +145,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.9, duration: 0.6 }}
-              className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
+              className="relative aspect-square overflow-hidden rounded-2xl border border-border-color bg-card-bg"
             >
               <Image
                 src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop"

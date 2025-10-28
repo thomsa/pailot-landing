@@ -8,7 +8,12 @@ import Navbar from "./Navbar";
 
 const Layout = ({ children }: PropsWithChildren) => {
   return (
-    <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+    <ThemeProvider
+      attribute="data-theme"
+      defaultTheme="dark"
+      enableSystem={false}
+      disableTransitionOnChange
+    >
       <HeroUIProvider>
         <div className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(30,144,255,0.15),_transparent_55%)]">
           <Navbar />

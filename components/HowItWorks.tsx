@@ -37,7 +37,7 @@ const HowItWorks = () => {
       </div>
       <div
         ref={ref as RefObject<HTMLDivElement>}
-        className="relative rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur-xl"
+        className="relative rounded-3xl border border-border-color bg-card-bg p-10"
       >
         <div className="relative grid gap-12 md:grid-cols-3">
           {steps.map((step, index) => (
