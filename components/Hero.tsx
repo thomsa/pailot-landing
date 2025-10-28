@@ -5,8 +5,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import { Sparkles, Target, Zap } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 const Hero = () => {
+  const t = useTranslations('hero');
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
 
@@ -42,7 +45,8 @@ const Hero = () => {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70"
           >
-            Your AI business pilot
+            <Sparkles className="h-3 w-3" />
+            {t('badge')}
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -50,7 +54,7 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"
           >
-            Your AI Business Pilot.
+            {t('headline')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 40 }}
@@ -58,7 +62,7 @@ const Hero = () => {
             transition={{ delay: 0.35, duration: 0.8 }}
             className="max-w-xl text-lg text-white/70"
           >
-            Pailot connects your tools, automates your workflows, and keeps your business running smoothly.
+            {t('description')}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -72,29 +76,88 @@ const Hero = () => {
               radius="full"
               className="gradient-border relative overflow-hidden bg-sky-gradient px-8 py-3 text-base font-semibold text-white shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
             >
-              Take Off
+              {t('cta')}
             </Button>
             <Link href="#features" className="text-sm font-semibold text-white/70 transition-colors duration-300 hover:text-white">
-              See how it works →
+              {t('learnMore')} →
             </Link>
           </motion.div>
         </div>
         <motion.div
-          style={{ y: floatY, opacity: glow }}
+          style={{ y: floatY }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-          className="relative mx-auto aspect-square w-full max-w-sm"
+          className="relative mx-auto w-full max-w-sm"
         >
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 blur-3xl" />
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-light/20 to-electric/20 blur-3xl" />
+          <div className="relative grid grid-cols-2 gap-4">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
+                alt="Business professional"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"
+                alt="Business team member"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop"
+                alt="Business leader"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.9, duration: 0.6 }}
+              className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop"
+                alt="Business professional"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          </div>
           <motion.div
-            animate={{ rotate: [0, 5, -5, 0], y: [0, -10, 10, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="relative grid h-full place-items-center rounded-full border border-white/20 bg-white/10 backdrop-blur-xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.6 }}
+            className="mt-6 flex items-center justify-center gap-6 text-white/70"
           >
-            <div className="grid place-items-center rounded-full border border-white/10 bg-black/60 p-10 text-center text-white">
-              <span className="text-sm uppercase tracking-[0.5em] text-white/50">Pailot</span>
-              <p className="mt-4 text-2xl font-semibold">Autopilot<br />for work</p>
+            <div className="flex items-center gap-2">
+              <Target className="h-5 w-5 text-sky-light" />
+              <span className="text-sm">Tailored</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Zap className="h-5 w-5 text-sky-light" />
+              <span className="text-sm">Powerful</span>
             </div>
           </motion.div>
         </motion.div>

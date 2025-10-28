@@ -3,31 +3,31 @@
 import { Button } from "@heroui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useTranslations } from 'next-intl';
 
-const testimonials = [
+const getTestimonials = (t: any) => [
   {
-    quote:
-      "Pailot gives us a control tower view of every workflow. Our team saves hours each week because the platform keeps everything synchronized.",
-    name: "Aria Gomez",
-    role: "COO, Northwind Studio"
+    quote: t('testimonial1.quote'),
+    name: t('testimonial1.name'),
+    role: t('testimonial1.role')
   },
   {
-    quote:
-      "We plugged in our CRM and docs in minutes. The automations Pailot suggested were spot on, and approvals feel effortless now.",
-    name: "Jared Chen",
-    role: "Founder, DeltaForge"
+    quote: t('testimonial2.quote'),
+    name: t('testimonial2.name'),
+    role: t('testimonial2.role')
   },
   {
-    quote:
-      "It feels like a calm, confident pilot guiding our operations. Visibility and security were non-negotiable, and Pailot nailed both.",
-    name: "Maya Patel",
-    role: "Head of Operations, AeroSync"
+    quote: t('testimonial3.quote'),
+    name: t('testimonial3.name'),
+    role: t('testimonial3.role')
   }
 ];
 
 const transition = { duration: 0.6, ease: "easeInOut" };
 
 const Testimonials = () => {
+  const t = useTranslations('testimonials');
+  const testimonials = getTestimonials(t);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Testimonials = () => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   const next = () => setActiveIndex((prev) => (prev + 1) % testimonials.length);
   const prev = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -43,9 +43,9 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="space-y-12">
       <div className="flex flex-col gap-4 text-center">
-        <h2 className="text-3xl font-semibold text-white sm:text-4xl">Trusted by teams that lead the way</h2>
+        <h2 className="text-3xl font-semibold text-white sm:text-4xl">{t('headline')}</h2>
         <p className="mx-auto max-w-2xl text-base text-white/70">
-          Feedback from operators who run on Pailot every day.
+          {t('description')}
         </p>
       </div>
       <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0B132B]/90 via-[#091027]/90 to-[#050816]/90 p-12 shadow-glow">
@@ -73,7 +73,7 @@ const Testimonials = () => {
               onPress={prev}
               className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white transition-all duration-300 hover:border-white/40 hover:bg-white/20"
             >
-              Prev
+              {t('prev')}
             </Button>
             <div className="flex items-center gap-2">
               {testimonials.map((_, index) => (
@@ -93,7 +93,7 @@ const Testimonials = () => {
               onPress={next}
               className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white transition-all duration-300 hover:border-white/40 hover:bg-white/20"
             >
-              Next
+              {t('next')}
             </Button>
           </div>
         </div>

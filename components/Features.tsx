@@ -3,34 +3,47 @@
 import { Card, CardBody } from "@heroui/react";
 import { motion } from "framer-motion";
 import {
-  BoltIcon,
-  CommandLineIcon,
-  ShieldCheckIcon,
-  Squares2X2Icon
-} from "@heroicons/react/24/outline";
+  Wrench,
+  Brain,
+  Users,
+  TrendingUp,
+  Shield,
+  Zap
+} from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import type { RefObject } from "react";
+import { useTranslations } from 'next-intl';
 
-const features = [
+const getFeatures = (t: any) => [
   {
-    title: "Connect Everything",
-    description: "Unify CRM, docs, and data into one cockpit with seamless integrations.",
-    icon: Squares2X2Icon
+    title: t('seamlessIntegration.title'),
+    description: t('seamlessIntegration.description'),
+    icon: Wrench
   },
   {
-    title: "Automate Tasks",
-    description: "Trigger workflows that run themselves while staying fully in sync.",
-    icon: BoltIcon
+    title: t('customBuilt.title'),
+    description: t('customBuilt.description'),
+    icon: Brain
   },
   {
-    title: "Stay in Control",
-    description: "Approve, monitor, and adjust in real time with smart checkpoints.",
-    icon: CommandLineIcon
+    title: t('smbFocused.title'),
+    description: t('smbFocused.description'),
+    icon: Users
   },
   {
-    title: "Private by Design",
-    description: "Keep everything local-first and encrypted end-to-end for peace of mind.",
-    icon: ShieldCheckIcon
+    title: t('rapidImplementation.title'),
+    description: t('rapidImplementation.description'),
+    icon: Zap
+  },
+  {
+    title: t('secureCompliant.title'),
+    description: t('secureCompliant.description'),
+    icon: Shield
+  },
+  {
+    title: t('measurableROI.title'),
+    description: t('measurableROI.description'),
+    icon: TrendingUp
   }
 ];
 
@@ -44,17 +57,19 @@ const cardVariants = {
 };
 
 const Features = () => {
+  const t = useTranslations('features');
   const { ref, controls } = useScrollReveal();
+  const features = getFeatures(t);
 
   return (
     <section id="features" className="space-y-12">
       <div className="flex flex-col gap-4 text-center">
-        <h2 className="text-3xl font-semibold text-white sm:text-4xl">Built to guide every workflow</h2>
+        <h2 className="text-3xl font-semibold text-white sm:text-4xl">{t('headline')}</h2>
         <p className="mx-auto max-w-2xl text-base text-white/70">
-          Four copilots handle the heavy lifting so your team can focus on strategic moves.
+          {t('description')}
         </p>
       </div>
-      <div ref={ref as RefObject<HTMLDivElement>} className="grid gap-6 md:grid-cols-2">
+      <div ref={ref as RefObject<HTMLDivElement>} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => {
           const Icon = feature.icon;
           return (

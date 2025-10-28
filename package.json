@@ -13,10 +13,12 @@
     "@heroui/react": "^2.1.5",
     "clsx": "^2.1.1",
     "framer-motion": "^11.0.7",
+    "lucide-react": "^0.548.0",
     "next": "14.2.3",
+    "next-intl": "^4.4.0",
+    "next-themes": "^0.3.0",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "next-themes": "^0.3.0"
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@types/node": "20.11.30",

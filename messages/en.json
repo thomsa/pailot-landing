@@ -1,0 +1,83 @@
+{
+  "hero": {
+    "badge": "Custom AI for SMBs",
+    "headline": "AI That Speaks Your Business Language",
+    "description": "Want to leverage AI but don't know where to start? Our team at Pailot makes AI work for your business—connecting the human touch with intelligent automation. We integrate your spreadsheets, custom apps, and enterprise software into one seamless solution.",
+    "cta": "Take Off",
+    "learnMore": "See how it works"
+  },
+  "features": {
+    "headline": "Why Choose Pailot?",
+    "description": "We make AI work for your business. Whether you use spreadsheets, custom apps, or enterprise software—we integrate it all and keep the human element at the heart of everything.",
+    "seamlessIntegration": {
+      "title": "Seamless Integration",
+      "description": "Connect your spreadsheets, custom apps, and enterprise software. We make everything work together, no matter where your data lives."
+    },
+    "customBuilt": {
+      "title": "Custom-Built for You",
+      "description": "Our team builds AI solutions tailored to your specific workflows and business challenges—with a human touch that understands your needs."
+    },
+    "smbFocused": {
+      "title": "Built for Growing Businesses",
+      "description": "Affordable, scalable solutions designed for small and medium-sized businesses ready to grow. Real people helping real businesses."
+    },
+    "rapidImplementation": {
+      "title": "Rapid Implementation",
+      "description": "Get up and running quickly with personalized onboarding and dedicated support from our team—humans helping humans."
+    },
+    "secureCompliant": {
+      "title": "Your Data, Your Control",
+      "description": "Work in your browser or on your desktop. True data security means you control your digital assets on your computer and network."
+    },
+    "measurableROI": {
+      "title": "Measurable Results",
+      "description": "Track productivity gains and cost savings with clear metrics and performance dashboards. See the real impact on your business."
+    }
+  },
+  "howItWorks": {
+    "headline": "From Idea to Implementation",
+    "description": "A simple, human-centered process to get your custom AI solution up and running.",
+    "discoveryCall": {
+      "title": "Discovery Call",
+      "description": "We learn about your business challenges, workflows, and goals. Real conversations with real people to identify where AI can make the biggest impact."
+    },
+    "customDesign": {
+      "title": "Custom Solution Design",
+      "description": "Our team builds AI agents tailored to your specific needs, integrating seamlessly with your existing tools—whether in the browser or on your desktop."
+    },
+    "launchSupport": {
+      "title": "Launch & Support",
+      "description": "Go live with dedicated onboarding and ongoing support. We're here to ensure your team gets maximum value—human support when you need it."
+    }
+  },
+  "testimonials": {
+    "headline": "Real Results from Real Businesses",
+    "description": "See how SMBs are leveraging custom AI to grow faster and work smarter—with the human touch that makes all the difference.",
+    "testimonial1": {
+      "quote": "We tried generic AI tools but they just didn't understand our industry. Pailot's team built us a custom solution that actually works for our specific workflows. The human element made all the difference. ROI in 3 months.",
+      "name": "Sarah Mitchell",
+      "role": "CEO, Brightwave Marketing"
+    },
+    "testimonial2": {
+      "quote": "As a 25-person company, we couldn't afford enterprise AI tools. Pailot gave us custom agents at a price that made sense, and the implementation was seamless. Real people who understand small business challenges.",
+      "name": "Marcus Rodriguez",
+      "role": "Operations Director, TechFlow Solutions"
+    },
+    "testimonial3": {
+      "quote": "Finally, an AI solution that speaks our language. The team took time to understand our business and delivered agents that feel like they were built just for us—because they were. It's AI with a human heart.",
+      "name": "Jennifer Park",
+      "role": "Founder, Elevate Consulting"
+    },
+    "prev": "Prev",
+    "next": "Next"
+  },
+  "cta": {
+    "headline": "Ready to Make AI Work for Your Business?",
+    "description": "Our team will integrate your tools and build custom AI solutions tailored to your business. Let's connect the human touch with intelligent automation.",
+    "button": "Schedule a Discovery Call"
+  },
+  "footer": {
+    "tagline": "Connecting AI with human businesses",
+    "copyright": "© 2025 Pailot. All rights reserved."
+  }
+}

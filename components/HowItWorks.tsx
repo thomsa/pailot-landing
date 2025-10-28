@@ -1,22 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
+import { Rocket } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import type { RefObject } from "react";
+import { useTranslations } from 'next-intl';
 
-const steps = [
+const getSteps = (t: any) => [
   {
-    title: "Map your process",
-    description: "Blueprint every workflow in minutes with drag-and-drop templates."
+    title: t('discoveryCall.title'),
+    description: t('discoveryCall.description')
   },
   {
-    title: "Add AI copilots",
-    description: "Assign automations to each checkpoint and connect the tools you rely on."
+    title: t('customDesign.title'),
+    description: t('customDesign.description')
   },
   {
-    title: "Let Pailot guide the work",
-    description: "Launch the flight plan and watch the cockpit update as tasks complete themselves."
+    title: t('launchSupport.title'),
+    description: t('launchSupport.description')
   }
 ];
 
@@ -26,14 +27,16 @@ const lineVariants = {
 };
 
 const HowItWorks = () => {
+  const t = useTranslations('howItWorks');
   const { ref, controls } = useScrollReveal();
+  const steps = getSteps(t);
 
   return (
     <section id="how-it-works" className="space-y-16">
       <div className="flex flex-col gap-4 text-center">
-        <h2 className="text-3xl font-semibold text-white sm:text-4xl">How Pailot charts the route</h2>
+        <h2 className="text-3xl font-semibold text-white sm:text-4xl">{t('headline')}</h2>
         <p className="mx-auto max-w-2xl text-base text-white/70">
-          A guided path from mapping to mastery keeps every team aligned.
+          {t('description')}
         </p>
       </div>
       <div
@@ -54,7 +57,7 @@ const HowItWorks = () => {
             </linearGradient>
           </defs>
           <motion.path
-            d="M40 160 C200 20, 400 20, 560 160"
+            d="M40 160 Q200 40, 560 20"
             stroke="url(#pathGradient)"
             strokeWidth="3"
             fill="transparent"
@@ -62,19 +65,17 @@ const HowItWorks = () => {
           />
         </motion.svg>
         <motion.div
-          initial={{ offsetDistance: "0%" }}
-          animate={{ offsetDistance: ["0%", "100%"], rotate: [0, 12, -12, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="pointer-events-none absolute left-0 top-0 h-full w-full"
+          style={{
+            offsetPath: "path('M40 160 Q200 40, 560 20')",
+          }}
+          initial={{ offsetDistance: "0%" }}
+          animate={{ offsetDistance: "100%" }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         >
-          <motion.div
-            className="h-10 w-10 rounded-full bg-sky-gradient shadow-glow"
-            style={{ offsetPath: "path('M40 160 C200 20, 400 20, 560 160')" }}
-          >
-            <div className="flex h-full w-full items-center justify-center text-white">
-              <PaperAirplaneIcon className="h-5 w-5" />
-            </div>
-          </motion.div>
+          <div className="h-10 w-10 -translate-x-5 -translate-y-5 rounded-full bg-sky-gradient shadow-glow flex items-center justify-center text-white">
+            <Rocket className="h-5 w-5" />
+          </div>
         </motion.div>
         <div className="relative grid gap-12 pt-12 md:grid-cols-3">
           {steps.map((step, index) => (
